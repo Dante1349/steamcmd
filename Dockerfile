@@ -12,17 +12,6 @@ RUN \
         lib32stdc++6 \ 
         lib32gcc1
 
-RUN apt-get install libmono-system-drawing4.0-cil \
-	libmono-system-runtime4.0-cil \
-	libmono-system-servicemodel4.0a-cil \
-	libmono-system-web-services4.0-cil \
-	libmono-cil-dev -y
-
-RUN apt-get install gnupg ca-certificates -y
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list
-RUN apt-get update
-RUN apt-get install mono-devel -y
 
 RUN useradd -m steam
 RUN su steam -c \
